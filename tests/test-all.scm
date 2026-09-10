@@ -8,6 +8,12 @@
 (use-modules (srfi srfi-64)
              (ice-9 format))
 
+;; Guile >= 3.0.10 ships a spec-conformant SRFI-64 without test-runner-test-count.
+(define (test-runner-test-count runner)
+  (+ (test-runner-pass-count runner) (test-runner-fail-count runner)
+     (test-runner-xpass-count runner) (test-runner-xfail-count runner)
+     (test-runner-skip-count runner)))
+
 ;; Configure test runner
 (test-runner-current (test-runner-simple))
 

@@ -14,6 +14,7 @@
             tool-function
             
             make-tool-registry
+            tool-registry?
             register-tool!
             get-tool
             list-tools
